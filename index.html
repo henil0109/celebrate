@@ -3,12 +3,12 @@
 
 <head>
     <script>
-  var password = prompt("Enter the password to view this site:");
-  if (password !== "HENIL2101") {
-    document.write("Access Denied");
-    window.stop(); // Stops further loading
-  }
-</script>
+        var password = prompt("Enter the password to view this site:");
+        if (password !== "HENIL2101") {
+            document.write("Access Denied");
+            window.stop(); // Stops further loading
+        }
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,10 +31,10 @@
     <section id="landing" class="vh-100 d-flex flex-column justify-content-center align-items-center text-center">
         <div class="content">
             <h1 class="display-1 fade-in-up">Welcome to</h2>
-            <h2 class="display-1 fade-in-up">A Small World of Henu and Diyu</h2>
-            <h2 class="display-4 fade-in-up">6 August 2025</h2><br>
-            <p class="lead fade-in-up">A beautiful journey of love and togetherness.</p>
-            <button class="btn btn-gold mt-4" id="welcome-btn">Click me to begin</button>
+                <h2 class="display-1 fade-in-up">A Small World of Henu and Diyu</h2>
+                <h2 class="display-4 fade-in-up">6 August 2025</h2><br>
+                <p class="lead fade-in-up">A beautiful journey of love and togetherness.</p>
+                <button class="btn btn-gold mt-4" id="welcome-btn">Click me to begin</button>
         </div>
         <div class="cake-animation-wrapper" id="cake-animation">
             <div>
@@ -208,6 +208,10 @@
             </svg>
         </div>
     </section>
+   <audio id="backgroundMusic" loop>
+  <source src="./assets/audio/song.mp3" type="audio/mpeg">
+</audio>
+
 
     <!-- Our Story Section -->
     <section id="story" class="py-5">
@@ -281,9 +285,11 @@ Today marks two beautiful years of that choice — two years of us. A journey fr
                 </div>
             </div>
             <br><br>
-            <div><h2>
-                Moments we shared Together
-            </h2></div>
+            <div>
+                <h2>
+                    Moments we shared Together
+                </h2>
+            </div>
             <!-- Gallery Grid -->
             <div class="row g-3 mt-5 gallery-grid">
                 <div class="col-md-4">
@@ -300,7 +306,7 @@ Today marks two beautiful years of that choice — two years of us. A journey fr
                     <img src="./assets/img18.png" class="img-fluid rounded-3" alt="Photo C" data-bs-toggle="modal"
                         data-bs-target="#galleryModal"
                         data-img-src="https://via.placeholder.com/1200x800/1e293b/ffc107?text=Photo+C">
-                </div>  
+                </div>
                 <div class="col-md-4">
                     <img src="./assets/img24.png" class="img-fluid rounded-3" alt="Photo D" data-bs-toggle="modal"
                         data-bs-target="#galleryModal"
@@ -312,8 +318,8 @@ Today marks two beautiful years of that choice — two years of us. A journey fr
                         data-img-src="https://via.placeholder.com/1200x800/1e293b/ffc107?text=Photo+E">
                 </div>
                 <div class="col-md-4">
-                    <img src="./assets/img25.png" class="img-fluid rounded-3"
-                        alt="Photo F" data-bs-toggle="modal" data-bs-target="#galleryModal"
+                    <img src="./assets/img25.png" class="img-fluid rounded-3" alt="Photo F" data-bs-toggle="modal"
+                        data-bs-target="#galleryModal"
                         data-img-src="https://via.placeholder.com/1200x800/1e293b/ffc107?text=Photo+F">
                 </div>
             </div>
@@ -384,6 +390,21 @@ Today marks two beautiful years of that choice — two years of us. A journey fr
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
+ <script>
+  const audio = document.getElementById("backgroundMusic");
+
+  // Wait for first click anywhere on the page
+  window.addEventListener("click", function () {
+    audio.play();
+  }, { once: true });
+
+  // Stop music when user leaves the page
+  window.addEventListener("beforeunload", function () {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+</script>
+
 
 </body>
 
